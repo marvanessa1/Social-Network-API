@@ -6,17 +6,6 @@ const headCount = async () =>
     .count('thoughtCount')
     .then((numberOfThoughts) => numberOfThoughts);
 
-// Aggregate function for getting the overall grade using $avg
-// const grade = async (thoughtId) =>
-//   Thought.aggregate([
-//     {
-//       $unwind: '$assignments',
-//     },
-//     {
-//       $group: { _id: thoughtId, overallGrade: { $avg: '$assignments.score' } },
-//     },
-//   ]);
-
 module.exports = {
   // Get all thoughts
   getThoughts(req, res) {
