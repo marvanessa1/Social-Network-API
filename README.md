@@ -33,7 +33,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Installs
 
 1. Clone this github repository
-2. Go to reposisory in local directory
+2. Go to repository in local directory
 3. Install dependencies by running command below:
 
 ```
@@ -57,7 +57,11 @@ npm start
 
 ## App Demo
 
-- [Demo Walkthrough]() 
+- [Demo Walkthrough - Getting Started](https://watch.screencastify.com/v/Uu1Kk1DDGZCn0xQODTq4) 
+- [Demo Walkthrough - Users](https://watch.screencastify.com/v/IRGcjVsRnBAuW4dYnM6z)
+- [Demo Walkthrough - Thoughts](https://watch.screencastify.com/v/EFXOWAVFwQ43pmVktZOk)
+- [Demo Walkthrough - Reactions](https://watch.screencastify.com/v/8Bhn07R0E3VRCz2oQPzf)
+- [Demo Walkthrough - Friends](https://watch.screencastify.com/v/GdiyMbfJKgpvwC6JuGeB)
 
 ## Contact Me
 

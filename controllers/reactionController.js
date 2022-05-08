@@ -19,8 +19,8 @@ module.exports = {
 
   // Remove reaction from thought
   removeReaction(req, res) {
-    Thought.findOneAndUpdate(
-      { _id: req.params.reactionId },
+    Thought.findByIdAndUpdate(
+      req.params.thoughtId,
       { $pull: { reaction: { reactionId: req.params.reactionId } } },
       { runValidators: true, new: true }
     )
@@ -28,7 +28,7 @@ module.exports = {
         !thought
           ? res
               .status(404)
-              .json({ message: 'No thought found with that ID :(' })
+              .json({ message: 'Reaction deleted, but no thoughts' })
           : res.json({ message: 'Rection was removed from thought'})
       )
       .catch((err) => res.status(500).json(err));
