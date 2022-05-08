@@ -11,7 +11,7 @@ Github Link: https://github.com/marvanessa1/Social-Network-API
 ## Description
 
 This is intended to help build an API for a social network application where users are able to share their thoughts, react to friends' thoughts, and make a friends list.  This application uses Express.js for routing, MongoDB to store database, and Mongoose ODB.
-![screenshot](./assets/Screenshot.png)
+
 
 ## Table of Contents
 
