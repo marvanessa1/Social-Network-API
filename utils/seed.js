@@ -22,9 +22,6 @@ connection.once('open', async () => {
   // Create empty array to hold the users
   const users = [];
 
-  // Get some random assignment objects using a helper function that we imported from ./data
-  const assignments = getRandomAssignments(20);
-
   // Loop 20 times -- add susers to the users array
   for (let i = 0; i < 20; i++) {
     const name = getRandomName();
@@ -41,9 +38,12 @@ connection.once('open', async () => {
   // Add users to the collection and await the results
   await User.collection.insertMany(users);
 
+  const data = await User.find();
+  const user = data.map(({ _id, userName}) => ({id: _id.valueOf(), userName}));
+
   for (let i = 0; i < 40; i++) {
-    let newUserId = getRandomArrItem(userArr).id;
-    let newFriendId = getRandomArrItem(userArr).id;
+    let newUserId = getRandomArrItem(user).id;
+    let newFriendId = getRandomArrItem(user).id;
     if (newUserId !== newFriendId) {
       await User.findOneAndUpdate(
         { _id:newUserId}, 
@@ -53,7 +53,7 @@ connection.once('open', async () => {
   }
 
   for (let i = 0; i < 50; i++) {
-    const thoughtUser = getRandomArrItem(userData);
+    const thoughtUser = getRandomArrItem(data);
 
     await Thought. create ({
       thoughtText: getRandomThought(),
@@ -74,7 +74,7 @@ connection.once('open', async () => {
   for (let i = 0; i < 20; i++) {
     await Thought.findOneAndUpdate(
       { _id: getRandomArrItem(userThought).id}, 
-      { $addToSet: {reactions: {reactionBody: getRandomReaction(), userName} } }, 
+      { $addToSet: {reactions: {reactionBody: getRandomReaction(), userName: getRandomArrItem(user).userName} } }, 
       );
   }
   
