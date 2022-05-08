@@ -1,6 +1,6 @@
 const { Schema, Types, model } = require('mongoose');
 
-const dateFormat = (date) => {return `${date.toDateString()} at ${date.toTimeString()}`}
+const dateFormat = (date) => { return `${date.toDateString()} at ${date.toTimeString()}` }
 
 const reactionSchema = new Schema(
     {
@@ -61,7 +61,7 @@ const thoughtSchema = new Schema({
 
 thoughtSchema
     .virtual('reactionCount')
-    .get(function() {
+    .get(function () {
         return this.reactions.lenght;
     })
 

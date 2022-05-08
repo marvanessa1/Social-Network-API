@@ -127,10 +127,10 @@ const getRandomThought = () => `${getRandomArrItem(thought)}`
 const getRandomReaction = () => `${getRandomArrItem(reaction)}`
 
 // Export the functions for use in seed.js
-module.exports = { 
+module.exports = {
   getRandomArrItem,
-  getRandomName, 
-  getRandomEmail, 
-  getRandomThought, 
+  getRandomName,
+  getRandomEmail,
+  getRandomThought,
   getRandomReaction
- };
+};
